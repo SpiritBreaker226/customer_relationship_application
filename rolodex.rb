@@ -40,6 +40,6 @@ class Rolodex
 	end
 
 	def search_contact(contact_id)
-		@contacts.find_all { |contact| contact.id == contact_id }
+		@contacts.find_all { |contact| contact.id.to_i == contact_id.to_i }
 	end
 end
