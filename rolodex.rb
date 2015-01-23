@@ -36,7 +36,7 @@ class Rolodex
 	def display_particular_contact(contact_id)
 		found_contact = search_contact(contact_id)
 
-		found_contact
+		found_contact.empty? ? "Contact Not Found" : found_contact
 	end
 
 	def search_contact(contact_id)
