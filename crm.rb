@@ -33,6 +33,8 @@ class CRM
 		when 7 
 			puts "Goodbye!"
 			return
+		else
+			puts "Number not found"
 		end
 	end
 
@@ -54,6 +56,11 @@ class CRM
 		note = gets.chomp
 
 		@rolodex.add_contact(Contact.new(first_name, last_name, email, note))
+	end
+
+	def modify_contact
+		puts "Enter an Id of contact which will be modified"
+		contact_id = gets.chomp
 	end
 
 	def print_main_menu
