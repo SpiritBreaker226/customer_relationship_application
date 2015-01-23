@@ -82,7 +82,7 @@ class CRM
 			print "Change #{modify_attribute} to: "
 			modify_value = gets.chomp
 
-			
+			@rolodex.modify_contact(contact_id, modify_attribute, modify_value)
 		end
 	end
 
