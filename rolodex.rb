@@ -1,8 +1,13 @@
+require_relative "./contact.rb"
+
 class Rolodex
 	@@index = 1001
 
 	def initialize
 		@contacts = []
+		add_contact(Contact.new("Jason", "Stats", "j@s.com", "Note"))
+		add_contact(Contact.new("Bob", "Stathopulos", "w@sat.com", ""))
+		add_contact(Contact.new("Billy", "Bob", "w@sat.com", "1234"))
 	end
 	
 	def add_contact(contact)
@@ -12,7 +17,7 @@ class Rolodex
 	end
 
 	def modify_contact(contact_id, modify_attribute, modify_value)
-		found_contact = @contacts.find { |contact| contact.id == contact_id }
+		found_contact = search_contact(contact_id)
 
 		unless found_contact == nil
 			case modify_attribute
@@ -26,5 +31,9 @@ class Rolodex
 
 	def display_all_contacts
 		@contacts.join("\n")
+	end
+
+	def search_contact(contact_id)
+		@contacts.find_all { |contact| contact.id == contact_id }
 	end
 end
