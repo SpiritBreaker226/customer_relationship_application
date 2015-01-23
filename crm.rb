@@ -78,6 +78,11 @@ class CRM
 			puts Menu.new("First Name", "Last Name", "Email", "Note")
 			print "Enter a number: "
 			modify_attribute = gets.chomp
+
+			print "Change #{modify_attribute} to: "
+			modify_value = gets.chomp
+
+			
 		end
 	end
 
