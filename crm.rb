@@ -58,6 +58,11 @@ class CRM
 		@rolodex.add_contact(Contact.new(first_name, last_name, email, note))
 	end
 
+	def ask_for_contact_id
+		puts "Enter an id of a contact?"
+		gets.chomp
+	end
+
 	def confirm_id?(contact_id)
 		while true
 			print "Is this the correct id #{contact_id} ('yes' or no)"
@@ -75,8 +80,7 @@ class CRM
 	end
 
 	def modify_contact
-		puts "Enter an Id of contact which will be modified"
-		contact_id = gets.chomp
+		contact_id = ask_for_contact_id
 
 		if confirm_id?(contact_id)
 			puts "Provide Attribute"
