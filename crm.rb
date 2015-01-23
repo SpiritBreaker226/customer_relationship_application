@@ -73,6 +73,11 @@ class CRM
 		contact_id = gets.chomp
 
 		if confirm_id?(contact_id)
+			puts "Provide Attribute"
+
+			puts Menu.new("First Name", "Last Name", "Email", "Note")
+			print "Enter a number: "
+			modify_attribute = gets.chomp
 		end
 	end
 
