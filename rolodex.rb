@@ -23,4 +23,8 @@ class Rolodex
 			end
 		end
 	end
+
+	def display_all_contacts
+		@contacts.join("\n")
+	end
 end

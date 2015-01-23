@@ -26,7 +26,7 @@ class CRM
 		case option
 		when 1 then add_contact
 		when 2 then modify_contact
-		when 3 then display_all_contact
+		when 3 then display_all_contacts
 		when 4 then display_contact
 		when 5 then display_attribute
 		when 6 then delete_contact
@@ -66,6 +66,12 @@ class CRM
 			return true if user_confirm_id == "yes"
 			return false if user_confirm_id == "no"
 		end
+	end
+
+	def display_all_contacts
+		puts "All contacts in the rolodex"
+
+		puts @rolodex.display_all_contacts
 	end
 
 	def modify_contact

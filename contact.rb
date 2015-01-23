@@ -7,4 +7,8 @@ class Contact
 		@email = email
 		@note = note
 	end
+
+	def to_s
+		"ID:#{@id}\nName: #{@first_name} #{@last_name}\nEmail: #{@email}\nNotes:\n#{@note}\n\n"
+	end
 end
