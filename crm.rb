@@ -58,9 +58,22 @@ class CRM
 		@rolodex.add_contact(Contact.new(first_name, last_name, email, note))
 	end
 
+	def confirm_id?(contact_id)
+		while true
+			print "Is this the correct id #{contact_id} ('yes' or no)"
+			user_confirm_id = gets.chomp.downcase
+
+			return true if user_confirm_id == "yes"
+			return false if user_confirm_id == "no"
+		end
+	end
+
 	def modify_contact
 		puts "Enter an Id of contact which will be modified"
 		contact_id = gets.chomp
+
+		if confirm_id?(contact_id)
+		end
 	end
 
 	def print_main_menu
