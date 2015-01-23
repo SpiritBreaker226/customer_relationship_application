@@ -27,7 +27,7 @@ class CRM
 		when 1 then add_contact
 		when 2 then modify_contact
 		when 3 then display_all_contacts
-		when 4 then display_contact
+		when 4 then display_particular_contact
 		when 5 then display_attribute
 		when 6 then delete_contact
 		when 7 
@@ -77,6 +77,10 @@ class CRM
 		puts "All contacts in the rolodex"
 
 		puts @rolodex.display_all_contacts
+	end
+
+	def display_particular_contact
+		puts @rolodex.display_particular_contact(ask_for_contact_id)
 	end
 
 	def modify_contact

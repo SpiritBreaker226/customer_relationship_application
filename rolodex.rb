@@ -33,6 +33,12 @@ class Rolodex
 		@contacts.join("\n")
 	end
 
+	def display_particular_contact(contact_id)
+		found_contact = search_contact(contact_id)
+
+		found_contact
+	end
+
 	def search_contact(contact_id)
 		@contacts.find_all { |contact| contact.id == contact_id }
 	end
