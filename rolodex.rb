@@ -29,6 +29,10 @@ class Rolodex
 		end
 	end
 
+	def delete_contact(contact_id)
+		@contacts.delete_if { |contact| contact.id.to_i == contact_id.to_i }
+	end
+
 	def display_all_contacts
 		@contacts.join("\n")
 	end

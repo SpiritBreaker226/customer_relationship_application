@@ -73,6 +73,12 @@ class CRM
 		end
 	end
 
+	def delete_contact
+		contact_id = ask_for_contact_id
+
+		@rolodex.delete_contact(contact_id) if confirm_id?(contact_id)
+	end
+
 	def display_all_contacts
 		puts "All contacts in the rolodex"
 
