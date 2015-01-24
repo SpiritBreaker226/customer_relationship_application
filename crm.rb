@@ -62,7 +62,7 @@ class CRM
 			puts "Number not found"
 		end
 	end
-	
+
 	def confirm_id?(contact_id)
 		while true
 			print "Is this the correct id #{contact_id} ('yes' or 'no'): "
@@ -80,9 +80,7 @@ class CRM
 	end
 
 	def display_all_contacts
-		puts "All contacts in the rolodex"
-
-		puts @rolodex.display_all_contacts
+		puts "All contacts in the rolodex\n\n#{@rolodex.display_all_contacts}"
 	end
 
 	def display_particular_contact
