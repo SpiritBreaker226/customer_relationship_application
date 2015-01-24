@@ -65,7 +65,7 @@ class CRM
 
 	def confirm_id?(contact_id)
 		while true
-			print "Is this the correct id #{contact_id} ('yes' or no)"
+			print "Is this the correct id #{contact_id} ('yes' or 'no'): "
 			user_confirm_id = gets.chomp.downcase
 
 			return true if user_confirm_id == "yes"
