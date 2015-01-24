@@ -22,22 +22,6 @@ class CRM
 		end
 	end
 
-	def choose_option(option)
-		case option
-		when 1 then add_contact
-		when 2 then modify_contact
-		when 3 then display_all_contacts
-		when 4 then display_particular_contact
-		when 5 then display_attribute
-		when 6 then delete_contact
-		when 7 
-			puts "Goodbye!"
-			return
-		else
-			puts "Number not found"
-		end
-	end
-
 	private
 
 	def add_contact
@@ -63,6 +47,22 @@ class CRM
 		gets.chomp
 	end
 
+	def choose_option(option)
+		case option
+		when 1 then add_contact
+		when 2 then modify_contact
+		when 3 then display_all_contacts
+		when 4 then display_particular_contact
+		when 5 then display_attribute
+		when 6 then delete_contact
+		when 7 
+			puts "Goodbye!"
+			return
+		else
+			puts "Number not found"
+		end
+	end
+	
 	def confirm_id?(contact_id)
 		while true
 			print "Is this the correct id #{contact_id} ('yes' or 'no'): "
