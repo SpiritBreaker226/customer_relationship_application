@@ -76,7 +76,11 @@ class CRM
 	def delete_contact
 		contact_id = ask_for_contact_id
 
-		@rolodex.delete_contact(contact_id) if confirm_id?(contact_id)
+		if confirm_id?(contact_id)
+			delete_contact_info = @rolodex.delete_contact(contact_id) 
+
+			puts delete_contact_info == nil ? "Unable to find contact" : "Deleted\n#{delete_contact_info}"
+		end
 	end
 
 	def display_all_contacts
