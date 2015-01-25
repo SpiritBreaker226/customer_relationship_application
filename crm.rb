@@ -19,7 +19,6 @@ class CRM
 			input = gets.chomp.to_i
 			choose_option(input)
 			pause_and_clear_screen
-			return if input == 7
 		end
 	end
 
@@ -58,7 +57,7 @@ class CRM
 		when 6 then delete_contact
 		when 7 
 			puts "Goodbye!"
-			return
+			exit
 		else
 			puts "Number not found"
 		end
