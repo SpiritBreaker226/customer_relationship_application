@@ -25,8 +25,14 @@ class Rolodex
 			when 2 then found_contact[0].last_name = modify_value
 			when 3 then found_contact[0].email = modify_value
 			when 4 then found_contact[0].note = modify_value
+			else
+				return nil
 			end
+
+			return found_contact[0]
 		end
+
+		return nil
 	end
 
 	def delete_contact(contact_id)
