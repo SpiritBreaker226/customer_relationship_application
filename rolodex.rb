@@ -20,11 +20,11 @@ class Rolodex
 		found_contact = search_contact(contact_id)
 
 		unless found_contact == nil
-			case modify_attribute
-			when 1 then found_contact.first_name = modify_value
-			when 2 then found_contact.last_name = modify_value
-			when 3 then found_contact.email = modify_value
-			when 4 then found_contact.note = modify_value				
+			case modify_attribute.to_i
+			when 1 then found_contact[0].first_name = modify_value
+			when 2 then found_contact[0].last_name = modify_value
+			when 3 then found_contact[0].email = modify_value
+			when 4 then found_contact[0].note = modify_value
 			end
 		end
 	end
