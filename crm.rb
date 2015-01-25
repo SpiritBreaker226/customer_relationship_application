@@ -18,6 +18,7 @@ class CRM
 			print_main_menu
 			input = gets.chomp.to_i
 			choose_option(input)
+			pause_and_clear_screen
 			return if input == 7
 		end
 	end
@@ -61,6 +62,12 @@ class CRM
 		else
 			puts "Number not found"
 		end
+	end
+
+	def pause_and_clear_screen
+		print "Press a key to continue"
+		gets.chomp
+		puts "\e[H\e[2J"
 	end
 
 	def confirm_id?(contact_id)
