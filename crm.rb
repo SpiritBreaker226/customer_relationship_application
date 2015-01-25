@@ -90,7 +90,9 @@ class CRM
 	def display_attribute
 		print "Enter a either ('firstname', 'lastname', 'email', or 'notes')\nto display all contacts with that attribute: "
 		
-		puts @rolodex.display_info_by_attribute(gets.chomp)
+		contact_info = @rolodex.display_info_by_attribute(gets.chomp)
+
+		puts contact_info == nil ? "Unable to find attribate" : contact_info
 	end
 
 	def display_particular_contact

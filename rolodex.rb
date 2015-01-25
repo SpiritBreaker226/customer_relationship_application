@@ -60,7 +60,7 @@ class Rolodex
 			end
 		end
 
-		display_contacts_by_attribute.empty? ? "Attribate Not Found" : display_contacts_by_attribute
+		display_contacts_by_attribute.empty? ? nil : display_contacts_by_attribute
 	end
 
 	def display_particular_contact(contact_id)
