@@ -5,9 +5,6 @@ class Rolodex
 
 	def initialize
 		@contacts = []
-		add_contact(Contact.new("Jason", "Stats", "j@s.com", "Note"))
-		add_contact(Contact.new("Bob", "Stathopulos", "w@sat.com", ""))
-		add_contact(Contact.new("Billy", "Bob", "w@sat.com", "1234"))
 	end
 	
 	def add_contact(contact)
