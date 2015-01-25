@@ -96,7 +96,9 @@ class CRM
 	end
 
 	def display_particular_contact
-		puts @rolodex.display_particular_contact(ask_for_contact_id)
+		contact_info = @rolodex.display_particular_contact(ask_for_contact_id)
+
+		puts contact_info == nil ? "Unable to find contact" : contact_info
 	end
 
 	def modify_contact
