@@ -37,6 +37,26 @@ class Rolodex
 		@contacts.join("\n")
 	end
 
+	def display_info_by_attribute(select_attribute)
+		display_contacts_by_attribute = ""
+
+		@contacts.each do |contact| 
+			unless select_attribute == nil
+				display_contacts_by_attribute += 
+				case select_attribute
+					when "firstname" then contact.first_name + "\n"
+					when "lastname"  then contact.last_name + "\n"
+					when "email"     then contact.email + "\n"
+					when "notes"     then contact.note + "\n"
+					else
+						""
+				end
+			end
+		end
+
+		display_contacts_by_attribute.empty? ? "Attribate Not Found" : display_contacts_by_attribute
+	end
+
 	def display_particular_contact(contact_id)
 		found_contact = search_contact(contact_id)
 

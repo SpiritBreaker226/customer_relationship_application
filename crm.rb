@@ -83,6 +83,12 @@ class CRM
 		puts "All contacts in the rolodex\n\n#{@rolodex.display_all_contacts}"
 	end
 
+	def display_attribute
+		print "Enter a either ('firstname', 'lastname', 'email', or 'notes')\nto display all contacts with that attribute: "
+		
+		puts @rolodex.display_info_by_attribute(gets.chomp)
+	end
+
 	def display_particular_contact
 		puts @rolodex.display_particular_contact(ask_for_contact_id)
 	end
