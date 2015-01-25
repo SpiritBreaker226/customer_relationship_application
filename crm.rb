@@ -12,6 +12,7 @@ class CRM
 	end
 
 	def main_menu
+		clear_screen
 		puts "Welcome to #{@name}"
 
 		while true
@@ -63,9 +64,7 @@ class CRM
 		end
 	end
 
-	def pause_and_clear_screen
-		print "Press a key to continue"
-		gets.chomp
+	def clear_screen
 		puts "\e[H\e[2J"
 	end
 
@@ -122,6 +121,12 @@ class CRM
 			puts "Update Summery"
 			display_contact_info(@rolodex.modify_contact(contact_id, modify_attribute, modify_value))
 		end
+	end
+
+	def pause_and_clear_screen
+		print "Press a key to continue"
+		gets.chomp
+		clear_screen
 	end
 
 	def print_main_menu
