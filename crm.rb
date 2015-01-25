@@ -73,13 +73,16 @@ class CRM
 		end
 	end
 
+	def display_contact_info(contact_info, what_was_not_found = "contact")
+		puts contact_info == nil ? "Unable to find #{what_was_not_found}" : contact_info
+	end
+
 	def delete_contact
 		contact_id = ask_for_contact_id
 
 		if confirm_id?(contact_id)
-			delete_contact_info = @rolodex.delete_contact(contact_id) 
-
-			puts delete_contact_info == nil ? "Unable to find contact" : "Deleted\n#{delete_contact_info}"
+			puts "Deleted Summery"
+			display_contact_info(@rolodex.delete_contact(contact_id))
 		end
 	end
 
@@ -89,16 +92,12 @@ class CRM
 
 	def display_attribute
 		print "Enter a either ('firstname', 'lastname', 'email', or 'notes')\nto display all contacts with that attribute: "
-		
-		contact_info = @rolodex.display_info_by_attribute(gets.chomp)
 
-		puts contact_info == nil ? "Unable to find attribate" : contact_info
+		display_contact_info(@rolodex.display_info_by_attribute(gets.chomp), "attribate")
 	end
 
 	def display_particular_contact
-		contact_info = @rolodex.display_particular_contact(ask_for_contact_id)
-
-		puts contact_info == nil ? "Unable to find contact" : contact_info
+		display_contact_info(@rolodex.display_particular_contact(ask_for_contact_id))
 	end
 
 	def modify_contact
