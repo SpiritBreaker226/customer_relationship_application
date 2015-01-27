@@ -28,23 +28,20 @@ class CRM
 	def add_contact
 		puts "Provide Contact Details"
 
-		print "First Name: "
-		first_name = gets.chomp
-
-		print "Last Name: "
-		last_name = gets.chomp
-
-		print "Email: "
-		email = gets.chomp
-
-		print "Note: "
-		note = gets.chomp
+		first_name 	=	ask_user_for_input("First Name: ")
+		last_name 	=	ask_user_for_input("Last Name: ")
+		email 			=	ask_user_for_input("Email: ")
+		note 				=	ask_user_for_input("Note: ")
 
 		@rolodex.add_contact(Contact.new(first_name, last_name, email, note))
 	end
 
 	def ask_for_contact_id
-		puts "Enter an id of a contact?"
+		ask_user_for_input("Enter an id of a contact?")
+	end
+
+	def ask_user_for_input(question)
+		puts question
 		gets.chomp
 	end
 
@@ -112,11 +109,9 @@ class CRM
 			puts "Provide Attribute"
 
 			puts Menu.new("First Name", "Last Name", "Email", "Note")
-			print "Enter a number: "
-			modify_attribute = gets.chomp
 
-			print "Change #{modify_attribute} to: "
-			modify_value = gets.chomp
+			modify_attribute = ask_user_for_input("Enter a number: ")
+			modify_value = ask_user_for_input("Change #{modify_attribute} to: ")
 
 			puts "Update Summery"
 			display_contact_info(@rolodex.modify_contact(contact_id, modify_attribute, modify_value))
@@ -124,8 +119,7 @@ class CRM
 	end
 
 	def pause_and_clear_screen
-		print "Press a key to continue"
-		gets.chomp
+		ask_user_for_input("Press a key to continue")
 		clear_screen
 	end
 
